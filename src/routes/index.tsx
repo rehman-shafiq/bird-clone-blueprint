@@ -116,8 +116,24 @@ function Header() {
 /* ---------------- Hero ---------------- */
 function Hero() {
   const [tab, setTab] = useState<"social" | "ads" | "seo">("social");
+  const [paused, setPaused] = useState(false);
+  const [locked, setLocked] = useState(false);
+
+  useEffect(() => {
+    if (paused || locked) return;
+    const order: Array<"social" | "ads" | "seo"> = ["social", "ads", "seo"];
+    const id = setInterval(() => {
+      setTab((t) => order[(order.indexOf(t) + 1) % order.length]);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [paused, locked]);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#EFF6FF] to-white">
+    <section
+      className="relative overflow-hidden bg-gradient-to-b from-[#EFF6FF] to-white"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="container-x grid lg:grid-cols-2 gap-10 lg:gap-16 pt-10 lg:pt-16 pb-16">
         {/* Left */}
         <div className="max-w-xl animate-fade-up">
@@ -160,7 +176,7 @@ function Hero() {
               ].map(({ id, label, Icon }) => (
                 <button
                   key={id}
-                  onClick={() => setTab(id as typeof tab)}
+                  onClick={() => { setTab(id as typeof tab); setLocked(true); }}
                   className={`inline-flex items-center gap-2 rounded-xl border px-4 h-10 text-[14px] font-semibold transition ${
                     tab === id
                       ? "bg-white border-[#0EA5E9] text-[#0EA5E9] shadow-card"
