@@ -88,12 +88,12 @@ function Header() {
             </button>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <a href="#" className="hidden sm:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Log in</a>
-          <a href="#pricing" className="hidden sm:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Get Started</a>
+        <div className="flex items-center gap-1.5">
+          <a href="#" className="hidden lg:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Log in</a>
+          <a href="#pricing" className="hidden lg:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Get Started</a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0F172A] px-4 h-10 text-[14px] font-semibold text-white hover:bg-[#0F172A]/90 transition"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-[#0F172A] px-3 sm:px-4 h-10 text-[13px] sm:text-[14px] font-semibold text-white hover:bg-[#0F172A]/90 transition whitespace-nowrap"
           >
             Book a Demo <ArrowRight className="h-4 w-4" />
           </a>
@@ -150,7 +150,7 @@ function Hero() {
             <span className="text-[14px] font-semibold text-[#0F172A]">650+</span>
             <span className="text-[14px] text-[#0F172A]/60">5 star reviews</span>
           </div>
-          <h1 className="font-display text-[44px] sm:text-[56px] lg:text-[64px] leading-[1.05] font-extrabold text-[#0F172A]">
+          <h1 className="font-display text-[34px] sm:text-[48px] lg:text-[64px] leading-[1.08] font-extrabold text-[#0F172A]">
             Social media management <span className="text-[#0EA5E9]">from $99/mo</span>
           </h1>
           <p className="mt-5 text-[17px] leading-[1.6] text-[#0F172A]/70">
@@ -204,9 +204,9 @@ function Hero() {
 
 function HeroPreview({ tab }: { tab: "social" | "ads" | "seo" }) {
   return (
-    <div className="relative rounded-3xl bg-gradient-to-br from-[#0EA5E9]/10 via-white to-[#10B981]/10 p-5 lg:p-7 shadow-card border border-border min-h-[520px]">
+    <div className="relative rounded-3xl bg-gradient-to-br from-[#0EA5E9]/10 via-white to-[#10B981]/10 p-4 sm:p-5 lg:p-7 shadow-card border border-border min-h-[480px] sm:min-h-[520px]">
       {tab === "social" && (
-        <div className="relative h-[500px] overflow-hidden grid grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]">
+        <div className="relative h-[440px] sm:h-[500px] overflow-hidden grid grid-cols-2 gap-3 sm:gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]">
           {[
             { items: [work1, work2, work3, work4, work5, work6], anim: "animate-scroll-y" },
             { items: [work4, work5, work6, work1, work2, work3], anim: "animate-scroll-y-reverse" },
@@ -294,16 +294,16 @@ function HeroPreview({ tab }: { tab: "social" | "ads" | "seo" }) {
 function TrustStrip() {
   const brands = ["GROVE", "NORTHWIND", "VYBE", "LUMINA", "ATLAS", "PARABLE", "NESPRO", "AURORA"];
   return (
-    <section className="bg-[#0F172A] py-10">
+    <section className="bg-[#0F172A] py-10 overflow-hidden">
       <div className="container-x flex flex-col md:flex-row items-center gap-8">
-        <div className="text-center md:text-left md:border-r md:border-white/15 md:pr-8">
-          <p className="font-display text-[32px] font-extrabold text-white leading-none">18,000+</p>
+        <div className="text-center md:text-left md:border-r md:border-white/15 md:pr-8 shrink-0">
+          <p className="font-display text-[28px] sm:text-[32px] font-extrabold text-white leading-none">18,000+</p>
           <p className="text-[13px] text-white/60 mt-1">Businesses trust Plumeo</p>
         </div>
-        <div className="flex-1 overflow-hidden">
-          <div className="flex gap-12 animate-marquee whitespace-nowrap">
+        <div className="w-full flex-1 min-w-0 overflow-hidden">
+          <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
             {[...brands, ...brands].map((b, i) => (
-              <span key={i} className="text-white/55 font-display font-bold tracking-[0.2em] text-[18px]">{b}</span>
+              <span key={i} className="text-white/55 font-display font-bold tracking-[0.2em] text-[16px] sm:text-[18px]">{b}</span>
             ))}
           </div>
         </div>
@@ -353,11 +353,11 @@ function WorkExamples() {
   const items = sets[active];
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Our Work</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Examples of our work</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Examples of our work</h2>
           <p className="mt-4 text-[17px] text-[#0F172A]/70">Hand-crafted content that looks like it belongs on a brand's feed — not on a stock photo site.</p>
         </div>
 
@@ -408,14 +408,14 @@ function Guarantee() {
     { d: "Day 14", t: "100% refund window", desc: "Not happy with anything? Cancel for a full refund — no questions asked." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF]">
       <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full bg-white border border-border px-3 py-1.5 mb-5">
             <ShieldCheck className="h-4 w-4 text-[#0EA5E9]" />
             <span className="text-[13px] font-semibold text-[#0F172A]">Risk-free guarantee</span>
           </div>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">
             14 days to fall in love — <span className="text-[#0EA5E9]">or your money back.</span>
           </h2>
           <p className="mt-5 text-[17px] text-[#0F172A]/70">
@@ -481,10 +481,10 @@ function Services() {
     },
   ];
   return (
-    <section id="pricing" className="py-20 lg:py-28 bg-white">
+    <section id="pricing" className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-[44px] lg:text-[56px] font-extrabold text-[#0F172A] leading-tight">All Services</h2>
+          <h2 className="font-display text-[34px] sm:text-[44px] lg:text-[56px] font-extrabold text-[#0F172A] leading-tight">All Services</h2>
           <p className="mt-4 text-[16px] text-[#0F172A]/70">Get your creative & marketing work done without the hassle of unreliable freelancers, costly agencies. Pay a fixed, monthly, and predictable rate, with no contracts or surprises.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -529,12 +529,12 @@ function Deliverables() {
     { n: "24/7", t: "Slack-style support", d: "Message us anytime in our shared client workspace." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#0F172A] text-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#0F172A] text-white">
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
           <div className="lg:col-span-7">
             <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">What you get</p>
-            <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold leading-tight">Every month, delivered like clockwork.</h2>
+            <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold leading-tight">Every month, delivered like clockwork.</h2>
           </div>
           <p className="lg:col-span-5 text-[17px] text-white/70">
             One flat fee. One dedicated team. A full month of done-for-you content, ads, and reporting — every single month.
@@ -543,7 +543,7 @@ function Deliverables() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 rounded-3xl overflow-hidden border border-white/10">
           {items.map((it) => (
             <div key={it.t} className="bg-[#0F172A] p-8">
-              <p className="font-display text-[56px] font-extrabold text-[#0EA5E9] leading-none">{it.n}</p>
+              <p className="font-display text-[44px] sm:text-[56px] font-extrabold text-[#0EA5E9] leading-none">{it.n}</p>
               <p className="font-display text-[20px] font-bold mt-3">{it.t}</p>
               <p className="text-[14px] text-white/65 mt-2">{it.d}</p>
             </div>
@@ -565,27 +565,27 @@ function Testimonials() {
     { n: "Marco Visconti", r: "Owner, Aurora Restaurants", a: avatar3, t: "Bookings up 38% across our 3 locations since we started. The food content alone is worth twice what we pay. Plumeo is a no-brainer for any restaurant group." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF] overflow-hidden">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 mb-3">
+          <div className="inline-flex flex-wrap justify-center items-center gap-2 mb-3">
             <div className="flex">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-[#0EA5E9] text-[#0EA5E9]" />)}</div>
             <span className="text-[15px] font-semibold text-[#0F172A]">4.9 from 650+ reviews</span>
           </div>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Loved by ambitious brands.</h2>
+          <h2 className="font-display text-[32px] sm:text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Loved by ambitious brands.</h2>
         </div>
       </div>
       <div className="relative overflow-hidden">
         <div className="flex gap-5 animate-marquee w-max">
           {[...reviews, ...reviews].map((r, i) => (
-            <div key={i} className="w-[380px] shrink-0 bg-white rounded-2xl p-6 shadow-card border border-border">
+            <div key={i} className="w-[300px] sm:w-[380px] shrink-0 bg-white rounded-2xl p-6 shadow-card border border-border">
               <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-4 w-4 fill-[#0EA5E9] text-[#0EA5E9]" />)}</div>
               <p className="mt-4 text-[15px] text-[#0F172A] leading-relaxed">"{r.t}"</p>
               <div className="mt-5 flex items-center gap-3 pt-4 border-t border-border">
-                <img src={r.a} alt="" loading="lazy" className="h-10 w-10 rounded-full object-cover" />
-                <div>
-                  <p className="text-[14px] font-semibold text-[#0F172A]">{r.n}</p>
-                  <p className="text-[12px] text-[#0F172A]/60">{r.r}</p>
+                <img src={r.a} alt="" loading="lazy" className="h-10 w-10 rounded-full object-cover shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-[14px] font-semibold text-[#0F172A] truncate">{r.n}</p>
+                  <p className="text-[12px] text-[#0F172A]/60 truncate">{r.r}</p>
                 </div>
               </div>
             </div>
@@ -600,12 +600,12 @@ function Testimonials() {
 function SocialGallery() {
   const grid = [work1, work2, work3, work4, work5, work6, work2, work1, work3, work4, work5, work6];
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
           <div className="lg:col-span-7">
             <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Social Gallery</p>
-            <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for the feed. Designed to convert.</h2>
+            <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for the feed. Designed to convert.</h2>
           </div>
           <p className="lg:col-span-5 text-[17px] text-[#0F172A]/70">
             Every post is crafted to stop the scroll, build the brand, and move people toward purchase. No filler. No templates.
@@ -630,11 +630,11 @@ function SocialGallery() {
 /* ---------------- Before & After ---------------- */
 function BeforeAfter() {
   return (
-    <section className="py-20 lg:py-28 bg-[#0F172A] text-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#0F172A] text-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">Before & After</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold leading-tight">Real brands. Real glow-ups.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold leading-tight">Real brands. Real glow-ups.</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
           {[
@@ -677,11 +677,11 @@ function Features() {
     { Icon: Clock, t: "Get 20+ hours back", d: "Stop wrestling Canva at midnight. We handle every pixel so you can run the business." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Why Plumeo</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for brands that ship.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for brands that ship.</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {feats.map(({ Icon, t, d }) => (
@@ -756,11 +756,11 @@ function Team() {
     { n: "Riley Park", r: "Community Manager", img: team3, dur: "0:29" },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF]">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">Team</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">180+ humans. Zero AI shortcuts.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">180+ humans. Zero AI shortcuts.</h2>
           <p className="mt-4 text-[17px] text-[#0F172A]/70">Every post, video, and ad is made by a vetted creator who's spent years in the trenches of social media.</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
@@ -776,11 +776,11 @@ function Team() {
 /* ---------------- Collaboration ---------------- */
 function Collaboration() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Collaboration</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Your team and ours, in one shared workspace.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Your team and ours, in one shared workspace.</h2>
           <p className="mt-5 text-[17px] text-[#0F172A]/70">
             Review every post, leave pixel-perfect feedback, and approve content with a click. No more email threads, screenshot annotations, or "did you see my last message?"
           </p>
@@ -854,11 +854,11 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF]">
       <div className="container-x grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">FAQ</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Questions, answered.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Questions, answered.</h2>
           <p className="mt-5 text-[17px] text-[#0F172A]/70">Can't find what you're looking for? Book a free 20-minute call with our team.</p>
           <a href="#contact" className="mt-6 inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-[#0F172A] text-white font-semibold">
             Book a Demo <ArrowRight className="h-4 w-4" />
@@ -885,12 +885,12 @@ function FAQ() {
 /* ---------------- CTA ---------------- */
 function FinalCTA() {
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-white">
+    <section id="contact" className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] p-10 lg:p-16 text-center text-white shadow-pop">
           <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, white 0%, transparent 40%), radial-gradient(circle at 80% 80%, white 0%, transparent 40%)" }} />
           <div className="relative max-w-2xl mx-auto">
-            <h2 className="font-display text-[40px] lg:text-[56px] font-extrabold leading-tight">Ready to make your brand impossible to scroll past?</h2>
+            <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[56px] font-extrabold leading-tight">Ready to make your brand impossible to scroll past?</h2>
             <p className="mt-5 text-[18px] text-white/90">Plans from $99/mo. 14-day money-back guarantee. Cancel anytime.</p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <a href="#pricing" className="inline-flex h-12 items-center px-6 rounded-xl bg-white text-[#0F172A] font-semibold hover:bg-white/90 transition">View Pricing</a>
@@ -914,10 +914,10 @@ function Footer() {
     { title: "Legal", items: ["Terms", "Privacy", "Security", "Cookies", "DPA", "Status"] },
   ];
   return (
-    <footer className="bg-[#0F172A] text-white pt-20 pb-10">
+    <footer className="bg-[#0F172A] text-white pt-16 sm:pt-20 pb-10">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-white/10">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-4">
             <Logo className="[&_span]:text-white" />
             <p className="mt-5 text-[15px] text-white/65 max-w-sm">The growth-focused social media agency for small businesses. 180+ creators. 18,000+ brands. One simple monthly fee.</p>
             <div className="mt-6 flex gap-2">
