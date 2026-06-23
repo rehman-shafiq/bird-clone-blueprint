@@ -914,10 +914,10 @@ function Footer() {
     { title: "Legal", items: ["Terms", "Privacy", "Security", "Cookies", "DPA", "Status"] },
   ];
   return (
-    <footer className="bg-[#0F172A] text-white pt-20 pb-10">
+    <footer className="bg-[#0F172A] text-white pt-16 sm:pt-20 pb-10">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-white/10">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-4">
             <Logo className="[&_span]:text-white" />
             <p className="mt-5 text-[15px] text-white/65 max-w-sm">The growth-focused social media agency for small businesses. 180+ creators. 18,000+ brands. One simple monthly fee.</p>
             <div className="mt-6 flex gap-2">
