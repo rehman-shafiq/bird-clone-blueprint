@@ -353,7 +353,7 @@ function WorkExamples() {
   const items = sets[active];
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Our Work</p>
@@ -408,7 +408,7 @@ function Guarantee() {
     { d: "Day 14", t: "100% refund window", desc: "Not happy with anything? Cancel for a full refund — no questions asked." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF]">
       <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full bg-white border border-border px-3 py-1.5 mb-5">
@@ -481,7 +481,7 @@ function Services() {
     },
   ];
   return (
-    <section id="pricing" className="py-20 lg:py-28 bg-white">
+    <section id="pricing" className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-display text-[34px] sm:text-[44px] lg:text-[56px] font-extrabold text-[#0F172A] leading-tight">All Services</h2>
@@ -529,7 +529,7 @@ function Deliverables() {
     { n: "24/7", t: "Slack-style support", d: "Message us anytime in our shared client workspace." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#0F172A] text-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#0F172A] text-white">
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
           <div className="lg:col-span-7">
@@ -543,7 +543,7 @@ function Deliverables() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 rounded-3xl overflow-hidden border border-white/10">
           {items.map((it) => (
             <div key={it.t} className="bg-[#0F172A] p-8">
-              <p className="font-display text-[56px] font-extrabold text-[#0EA5E9] leading-none">{it.n}</p>
+              <p className="font-display text-[44px] sm:text-[56px] font-extrabold text-[#0EA5E9] leading-none">{it.n}</p>
               <p className="font-display text-[20px] font-bold mt-3">{it.t}</p>
               <p className="text-[14px] text-white/65 mt-2">{it.d}</p>
             </div>
@@ -565,7 +565,7 @@ function Testimonials() {
     { n: "Marco Visconti", r: "Owner, Aurora Restaurants", a: avatar3, t: "Bookings up 38% across our 3 locations since we started. The food content alone is worth twice what we pay. Plumeo is a no-brainer for any restaurant group." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF] overflow-hidden">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF] overflow-hidden">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex flex-wrap justify-center items-center gap-2 mb-3">
@@ -600,7 +600,7 @@ function Testimonials() {
 function SocialGallery() {
   const grid = [work1, work2, work3, work4, work5, work6, work2, work1, work3, work4, work5, work6];
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
           <div className="lg:col-span-7">
@@ -630,7 +630,7 @@ function SocialGallery() {
 /* ---------------- Before & After ---------------- */
 function BeforeAfter() {
   return (
-    <section className="py-20 lg:py-28 bg-[#0F172A] text-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#0F172A] text-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">Before & After</p>
@@ -677,7 +677,7 @@ function Features() {
     { Icon: Clock, t: "Get 20+ hours back", d: "Stop wrestling Canva at midnight. We handle every pixel so you can run the business." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Why Plumeo</p>
@@ -756,7 +756,7 @@ function Team() {
     { n: "Riley Park", r: "Community Manager", img: team3, dur: "0:29" },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF]">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">Team</p>
@@ -776,7 +776,7 @@ function Team() {
 /* ---------------- Collaboration ---------------- */
 function Collaboration() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Collaboration</p>
@@ -854,7 +854,7 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#EFF6FF]">
       <div className="container-x grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">FAQ</p>
@@ -885,7 +885,7 @@ function FAQ() {
 /* ---------------- CTA ---------------- */
 function FinalCTA() {
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-white">
+    <section id="contact" className="py-14 sm:py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] p-10 lg:p-16 text-center text-white shadow-pop">
           <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, white 0%, transparent 40%), radial-gradient(circle at 80% 80%, white 0%, transparent 40%)" }} />
