@@ -14,10 +14,14 @@ import work3 from "@/assets/work-3.jpg";
 import work4 from "@/assets/work-4.jpg";
 import work5 from "@/assets/work-5.jpg";
 import work6 from "@/assets/work-6.jpg";
-import team1 from "@/assets/team-1.jpg";
-import team2 from "@/assets/team-2.jpg";
-import team3 from "@/assets/team-3.jpg";
-import team4 from "@/assets/team-4.jpg";
+import team1Video from "@/assets/team-1.mp4.asset.json";
+import team2Video from "@/assets/team-2.mp4.asset.json";
+import team3Video from "@/assets/team-3.mp4.asset.json";
+import team4Video from "@/assets/team-4.mp4.asset.json";
+const team1 = team1Video.url;
+const team2 = team2Video.url;
+const team3 = team3Video.url;
+const team4 = team4Video.url;
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
@@ -719,7 +723,14 @@ function Team() {
           {team.map((t) => (
             <div key={t.n} className="group rounded-2xl bg-white overflow-hidden shadow-card hover:shadow-pop transition">
               <div className="aspect-[4/5] bg-muted overflow-hidden">
-                <img src={t.img} alt={t.n} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                <video
+                  src={t.img}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
               </div>
               <div className="p-4">
                 <p className="font-display text-[16px] font-bold text-[#0F172A]">{t.n}</p>
