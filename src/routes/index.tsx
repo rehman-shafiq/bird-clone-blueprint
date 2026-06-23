@@ -723,7 +723,14 @@ function Team() {
           {team.map((t) => (
             <div key={t.n} className="group rounded-2xl bg-white overflow-hidden shadow-card hover:shadow-pop transition">
               <div className="aspect-[4/5] bg-muted overflow-hidden">
-                <img src={t.img} alt={t.n} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                <video
+                  src={t.img}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
               </div>
               <div className="p-4">
                 <p className="font-display text-[16px] font-bold text-[#0F172A]">{t.n}</p>
