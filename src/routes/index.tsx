@@ -88,12 +88,12 @@ function Header() {
             </button>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <a href="#" className="hidden sm:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Log in</a>
-          <a href="#pricing" className="hidden sm:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Get Started</a>
+        <div className="flex items-center gap-1.5">
+          <a href="#" className="hidden lg:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Log in</a>
+          <a href="#pricing" className="hidden lg:inline-flex px-3 py-2 text-[15px] font-medium text-[#0F172A]/80 hover:text-[#0F172A]">Get Started</a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0F172A] px-4 h-10 text-[14px] font-semibold text-white hover:bg-[#0F172A]/90 transition"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-[#0F172A] px-3 sm:px-4 h-10 text-[13px] sm:text-[14px] font-semibold text-white hover:bg-[#0F172A]/90 transition whitespace-nowrap"
           >
             Book a Demo <ArrowRight className="h-4 w-4" />
           </a>
