@@ -150,7 +150,7 @@ function Hero() {
             <span className="text-[14px] font-semibold text-[#0F172A]">650+</span>
             <span className="text-[14px] text-[#0F172A]/60">5 star reviews</span>
           </div>
-          <h1 className="font-display text-[44px] sm:text-[56px] lg:text-[64px] leading-[1.05] font-extrabold text-[#0F172A]">
+          <h1 className="font-display text-[34px] sm:text-[48px] lg:text-[64px] leading-[1.08] font-extrabold text-[#0F172A]">
             Social media management <span className="text-[#0EA5E9]">from $99/mo</span>
           </h1>
           <p className="mt-5 text-[17px] leading-[1.6] text-[#0F172A]/70">
