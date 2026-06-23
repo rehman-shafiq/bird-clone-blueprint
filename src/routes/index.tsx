@@ -565,27 +565,27 @@ function Testimonials() {
     { n: "Marco Visconti", r: "Owner, Aurora Restaurants", a: avatar3, t: "Bookings up 38% across our 3 locations since we started. The food content alone is worth twice what we pay. Plumeo is a no-brainer for any restaurant group." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-[#EFF6FF]">
+    <section className="py-20 lg:py-28 bg-[#EFF6FF] overflow-hidden">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 mb-3">
+          <div className="inline-flex flex-wrap justify-center items-center gap-2 mb-3">
             <div className="flex">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-[#0EA5E9] text-[#0EA5E9]" />)}</div>
             <span className="text-[15px] font-semibold text-[#0F172A]">4.9 from 650+ reviews</span>
           </div>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Loved by ambitious brands.</h2>
+          <h2 className="font-display text-[32px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Loved by ambitious brands.</h2>
         </div>
       </div>
       <div className="relative overflow-hidden">
         <div className="flex gap-5 animate-marquee w-max">
           {[...reviews, ...reviews].map((r, i) => (
-            <div key={i} className="w-[380px] shrink-0 bg-white rounded-2xl p-6 shadow-card border border-border">
+            <div key={i} className="w-[300px] sm:w-[380px] shrink-0 bg-white rounded-2xl p-6 shadow-card border border-border">
               <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-4 w-4 fill-[#0EA5E9] text-[#0EA5E9]" />)}</div>
               <p className="mt-4 text-[15px] text-[#0F172A] leading-relaxed">"{r.t}"</p>
               <div className="mt-5 flex items-center gap-3 pt-4 border-t border-border">
-                <img src={r.a} alt="" loading="lazy" className="h-10 w-10 rounded-full object-cover" />
-                <div>
-                  <p className="text-[14px] font-semibold text-[#0F172A]">{r.n}</p>
-                  <p className="text-[12px] text-[#0F172A]/60">{r.r}</p>
+                <img src={r.a} alt="" loading="lazy" className="h-10 w-10 rounded-full object-cover shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-[14px] font-semibold text-[#0F172A] truncate">{r.n}</p>
+                  <p className="text-[12px] text-[#0F172A]/60 truncate">{r.r}</p>
                 </div>
               </div>
             </div>
