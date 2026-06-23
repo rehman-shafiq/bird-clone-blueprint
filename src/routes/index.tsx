@@ -301,28 +301,81 @@ function TrustStrip() {
 
 /* ---------------- Work Examples ---------------- */
 function WorkExamples() {
-  const items = [
-    { src: work1, tag: "Coffee" }, { src: work2, tag: "Fitness" },
-    { src: work3, tag: "Beauty" }, { src: work4, tag: "Restaurant" },
-    { src: work5, tag: "Tech" }, { src: work6, tag: "Real Estate" },
-    { src: work1, tag: "Wellness" }, { src: work2, tag: "Athletics" },
-  ];
+  const tabs = [
+    { id: "featured", label: "Featured", Icon: Sparkles },
+    { id: "posts", label: "Posts", Icon: ImageIcon },
+    { id: "videos", label: "Videos", Icon: Video },
+    { id: "ugc", label: "UGC", Icon: Instagram },
+  ] as const;
+  type TabId = typeof tabs[number]["id"];
+  const [active, setActive] = useState<TabId>("featured");
+
+  const sets: Record<TabId, { src: string; tag: string }[]> = {
+    featured: [
+      { src: work1, tag: "Wellness" }, { src: work2, tag: "Laundry" },
+      { src: work3, tag: "Pet Care" }, { src: work4, tag: "Travel" },
+      { src: work5, tag: "Real Estate" }, { src: work6, tag: "SaaS" },
+      { src: work1, tag: "Coffee" }, { src: work2, tag: "Fitness" },
+    ],
+    posts: [
+      { src: work2, tag: "Beauty" }, { src: work3, tag: "Food & Bev" },
+      { src: work4, tag: "Health" }, { src: work5, tag: "Home" },
+      { src: work6, tag: "Products" }, { src: work1, tag: "Pro Services" },
+      { src: work3, tag: "Real Estate" }, { src: work4, tag: "SaaS & Tech" },
+    ],
+    videos: [
+      { src: work5, tag: "Beauty" }, { src: work6, tag: "B2B" },
+      { src: work1, tag: "Food & Bev" }, { src: work2, tag: "Wellness" },
+      { src: work3, tag: "Home" }, { src: work4, tag: "Personal" },
+      { src: work5, tag: "Products" }, { src: work6, tag: "Pro Services" },
+    ],
+    ugc: [
+      { src: work4, tag: "Creator" }, { src: work5, tag: "Unboxing" },
+      { src: work6, tag: "Review" }, { src: work1, tag: "Tutorial" },
+      { src: work2, tag: "Lifestyle" }, { src: work3, tag: "Story" },
+      { src: work4, tag: "Behind the scenes" }, { src: work5, tag: "Demo" },
+    ],
+  };
+
+  const items = sets[active];
+
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="container-x">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Our Work</p>
           <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Examples of our work</h2>
-          <p className="mt-4 text-[17px] text-[#0F172A]/70">Hand-crafted posts that look like they belong on a brand's feed — not on a stock photo site.</p>
+          <p className="mt-4 text-[17px] text-[#0F172A]/70">Hand-crafted content that looks like it belongs on a brand's feed — not on a stock photo site.</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        <div className="mx-auto mb-8 grid grid-cols-2 sm:grid-cols-4 gap-2 p-2 rounded-2xl bg-white border border-border shadow-card max-w-4xl">
+          {tabs.map(({ id, label, Icon }) => {
+            const isActive = active === id;
+            return (
+              <button
+                key={id}
+                onClick={() => setActive(id)}
+                className={`flex items-center justify-center gap-2 h-12 rounded-xl text-[14px] font-semibold transition ${
+                  isActive
+                    ? "bg-[#0EA5E9] text-white shadow-pop"
+                    : "text-[#0F172A]/70 hover:bg-[#EFF6FF]"
+                }`}
+              >
+                <Icon className="h-4 w-4" /> {label}
+              </button>
+            );
+          })}
+        </div>
+
+        <div key={active} className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up">
           {items.map((it, i) => (
-            <div key={i} className="group relative rounded-2xl overflow-hidden bg-muted aspect-square shadow-card hover:shadow-pop transition">
+            <div key={`${active}-${i}`} className="group relative rounded-2xl overflow-hidden bg-muted aspect-square shadow-card hover:shadow-pop transition">
               <img src={it.src} alt={it.tag} loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur text-[11px] font-semibold text-[#0F172A]">{it.tag}</div>
             </div>
           ))}
         </div>
+
         <div className="text-center mt-10">
           <a href="#" className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border-2 border-[#0F172A] text-[#0F172A] font-semibold hover:bg-[#0F172A] hover:text-white transition">
             View all examples <ArrowRight className="h-4 w-4" />
