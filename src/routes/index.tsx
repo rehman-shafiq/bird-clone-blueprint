@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   ArrowRight, Check, Star, ShieldCheck, Sparkles, Image as ImageIcon,
   Video, Megaphone, PenLine, Search, Mail, Instagram, Facebook,
@@ -700,16 +700,60 @@ function Features() {
 }
 
 /* ---------------- Team ---------------- */
+function TeamCard({ n, r, img, dur }: { n: string; r: string; img: string; dur: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const toggle = () => {
+    const v = ref.current;
+    if (!v) return;
+    if (v.paused) { v.play(); setPlaying(true); } else { v.pause(); setPlaying(false); }
+  };
+  return (
+    <div className="group rounded-2xl bg-white overflow-hidden shadow-card hover:shadow-pop transition">
+      <div className="relative aspect-[4/5] bg-muted overflow-hidden cursor-pointer" onClick={toggle}>
+        <video
+          ref={ref}
+          src={img}
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+        {!playing && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition">
+            <div className="w-16 h-16 rounded-xl bg-[#2563EB] flex items-center justify-center shadow-lg">
+              <svg viewBox="0 0 24 24" fill="white" className="w-7 h-7 ml-1"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        )}
+        <div className="absolute bottom-2 left-2 right-2 flex items-center gap-2 px-2 py-1.5 rounded-md bg-black/40 backdrop-blur-sm text-white text-[12px]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3"><path d="M8 5v14l11-7z"/></svg>
+          <span>{dur}</span>
+          <div className="flex-1 h-[2px] bg-white/40 rounded-full" />
+          <span className="tracking-widest">···</span>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="font-display text-[16px] font-bold text-[#0F172A]">{n}</p>
+        <p className="text-[13px] text-[#0F172A]/60">{r}</p>
+      </div>
+    </div>
+  );
+}
+
 function Team() {
   const team = [
-    { n: "Alex Rivera", r: "Creative Director", img: team1 },
-    { n: "Jordan Kim", r: "Head of Strategy", img: team2 },
-    { n: "Priya Menon", r: "Lead Designer", img: team3 },
-    { n: "Marcus Wahl", r: "Video Director", img: team4 },
-    { n: "Eli Tanaka", r: "Performance Lead", img: team2 },
-    { n: "Nadia Brooks", r: "Account Director", img: team1 },
-    { n: "Sam Holloway", r: "Senior Copywriter", img: team4 },
-    { n: "Riley Park", r: "Community Manager", img: team3 },
+    { n: "Alex Rivera", r: "Creative Director", img: team1, dur: "0:30" },
+    { n: "Jordan Kim", r: "Head of Strategy", img: team2, dur: "0:44" },
+    { n: "Priya Menon", r: "Lead Designer", img: team3, dur: "0:33" },
+    { n: "Marcus Wahl", r: "Video Director", img: team4, dur: "0:31" },
+    { n: "Eli Tanaka", r: "Performance Lead", img: team2, dur: "0:28" },
+    { n: "Nadia Brooks", r: "Account Director", img: team1, dur: "0:42" },
+    { n: "Sam Holloway", r: "Senior Copywriter", img: team4, dur: "0:36" },
+    { n: "Riley Park", r: "Community Manager", img: team3, dur: "0:29" },
   ];
   return (
     <section className="py-20 lg:py-28 bg-[#EFF6FF]">
@@ -721,22 +765,7 @@ function Team() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {team.map((t) => (
-            <div key={t.n} className="group rounded-2xl bg-white overflow-hidden shadow-card hover:shadow-pop transition">
-              <div className="aspect-[4/5] bg-muted overflow-hidden">
-                <video
-                  src={t.img}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
-              </div>
-              <div className="p-4">
-                <p className="font-display text-[16px] font-bold text-[#0F172A]">{t.n}</p>
-                <p className="text-[13px] text-[#0F172A]/60">{t.r}</p>
-              </div>
-            </div>
+            <TeamCard key={t.n} {...t} />
           ))}
         </div>
       </div>
