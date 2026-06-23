@@ -442,40 +442,60 @@ function Guarantee() {
 /* ---------------- Services ---------------- */
 function Services() {
   const services = [
-    { Icon: ImageIcon, name: "Social Media", price: "$99", desc: "Daily posts, captions, hashtags, scheduling across all platforms." },
-    { Icon: Video, name: "Short-Form Video", price: "$299", desc: "Reels, TikToks, and Shorts edited by humans who get your brand." },
-    { Icon: Megaphone, name: "Meta Ads", price: "$499", desc: "Full-funnel Facebook & Instagram ads managed by certified buyers." },
-    { Icon: Search, name: "Google Ads", price: "$499", desc: "Search, Performance Max, and YouTube campaigns built to convert." },
-    { Icon: PenLine, name: "SEO Blog Posts", price: "$149", desc: "Long-form, ranked-ready articles written by topical experts." },
-    { Icon: Link2, name: "Backlinks", price: "$249", desc: "White-hat DA 40+ backlinks from real publications." },
-    { Icon: Mail, name: "Email Design", price: "$199", desc: "Beautiful, on-brand newsletters and lifecycle email campaigns." },
-    { Icon: Sparkles, name: "UGC Videos", price: "$349", desc: "Authentic creator content from a network of 1,200+ approved creators." },
+    {
+      Icon: ImageIcon,
+      tag: "SOCIAL MEDIA",
+      name: "Social Media Posts",
+      desc: "Static, single-image social media content created & posted monthly to your channels.",
+      price: "$99",
+      options: ["10 posts - $99/mo", "20 posts - $179/mo", "30 posts - $249/mo"],
+    },
+    {
+      Icon: Video,
+      tag: "SOCIAL MEDIA",
+      name: "Short-Form Videos",
+      desc: "Simple 15-60 second videos for TikTok, Reels, and Shorts.",
+      price: "$149",
+      options: ["5 videos - $149/mo", "10 videos - $279/mo", "20 videos - $499/mo"],
+    },
+    {
+      Icon: Sparkles,
+      tag: "UGC",
+      name: "UGC Videos",
+      desc: "Authentic creator videos from a network of 1,200+ approved creators.",
+      price: "$349",
+      options: ["3 videos - $349/mo", "6 videos - $649/mo", "10 videos - $999/mo"],
+    },
   ];
   return (
     <section id="pricing" className="py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">Services</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">One agency. Every channel.</h2>
-          <p className="mt-4 text-[17px] text-[#0F172A]/70">Mix and match the services you need. All transparently priced — no scope creep, no surprise invoices.</p>
+          <h2 className="font-display text-[44px] lg:text-[56px] font-extrabold text-[#0F172A] leading-tight">All Services</h2>
+          <p className="mt-4 text-[16px] text-[#0F172A]/70">Get your creative & marketing work done without the hassle of unreliable freelancers, costly agencies. Pay a fixed, monthly, and predictable rate, with no contracts or surprises.</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map(({ Icon, name, price, desc }) => (
-            <div key={name} className="group rounded-2xl bg-white border border-border p-6 hover:border-[#0EA5E9] hover:shadow-pop transition flex flex-col">
-              <div className="h-11 w-11 rounded-xl bg-[#0EA5E9]/10 flex items-center justify-center mb-4">
-                <Icon className="h-5 w-5 text-[#0EA5E9]" />
-              </div>
-              <h3 className="font-display text-[18px] font-bold text-[#0F172A]">{name}</h3>
-              <p className="text-[14px] text-[#0F172A]/65 mt-2 leading-relaxed flex-1">{desc}</p>
-              <div className="mt-5 flex items-end justify-between">
-                <div>
-                  <p className="text-[11px] text-[#0F172A]/50 font-medium">Starting at</p>
-                  <p className="font-display text-[24px] font-extrabold text-[#0F172A]">{price}<span className="text-[13px] font-medium text-[#0F172A]/60">/mo</span></p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {services.map(({ Icon, tag, name, desc, price, options }) => (
+            <div key={name} className="rounded-2xl bg-white border border-border p-7 hover:shadow-pop transition flex flex-col">
+              <div className="flex items-start justify-between mb-6">
+                <div className="h-11 w-11 rounded-xl bg-[#F1F5F9] flex items-center justify-center">
+                  <Icon className="h-5 w-5 text-[#0F172A]" />
                 </div>
-                <button className="h-9 w-9 rounded-lg bg-[#0F172A] text-white grid place-items-center group-hover:bg-[#0EA5E9] transition">
-                  <ArrowRight className="h-4 w-4" />
-                </button>
+                <span className="text-[11px] font-semibold tracking-wider text-[#0F172A]/70 bg-[#F1F5F9] rounded-full px-3 py-1">{tag}</span>
               </div>
+              <h3 className="font-display text-[22px] font-bold text-[#0F172A]">{name}</h3>
+              <p className="text-[14px] text-[#0F172A]/65 mt-2 leading-relaxed min-h-[42px]">{desc}</p>
+              <div className="mt-6">
+                <p className="font-display text-[42px] font-extrabold text-[#0F172A] leading-none">{price}</p>
+                <p className="text-[13px] text-[#0F172A]/60 mt-1">Pricing from</p>
+              </div>
+              <select className="mt-5 h-12 w-full rounded-xl border border-border bg-white px-4 text-[14px] text-[#0F172A] focus:outline-none focus:border-[#0EA5E9]">
+                {options.map((o) => <option key={o}>{o}</option>)}
+              </select>
+              <button className="mt-3 h-12 w-full rounded-xl bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-semibold transition inline-flex items-center justify-center gap-2">
+                Checkout <ArrowRight className="h-4 w-4" />
+              </button>
+              <a href="#" className="mt-3 text-center text-[14px] font-semibold text-[#0EA5E9] hover:underline">Learn more</a>
             </div>
           ))}
         </div>
@@ -483,6 +503,7 @@ function Services() {
     </section>
   );
 }
+
 
 /* ---------------- Monthly Deliverables ---------------- */
 function Deliverables() {
