@@ -294,16 +294,16 @@ function HeroPreview({ tab }: { tab: "social" | "ads" | "seo" }) {
 function TrustStrip() {
   const brands = ["GROVE", "NORTHWIND", "VYBE", "LUMINA", "ATLAS", "PARABLE", "NESPRO", "AURORA"];
   return (
-    <section className="bg-[#0F172A] py-10">
+    <section className="bg-[#0F172A] py-10 overflow-hidden">
       <div className="container-x flex flex-col md:flex-row items-center gap-8">
-        <div className="text-center md:text-left md:border-r md:border-white/15 md:pr-8">
-          <p className="font-display text-[32px] font-extrabold text-white leading-none">18,000+</p>
+        <div className="text-center md:text-left md:border-r md:border-white/15 md:pr-8 shrink-0">
+          <p className="font-display text-[28px] sm:text-[32px] font-extrabold text-white leading-none">18,000+</p>
           <p className="text-[13px] text-white/60 mt-1">Businesses trust Plumeo</p>
         </div>
-        <div className="flex-1 overflow-hidden">
-          <div className="flex gap-12 animate-marquee whitespace-nowrap">
+        <div className="w-full flex-1 min-w-0 overflow-hidden">
+          <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
             {[...brands, ...brands].map((b, i) => (
-              <span key={i} className="text-white/55 font-display font-bold tracking-[0.2em] text-[18px]">{b}</span>
+              <span key={i} className="text-white/55 font-display font-bold tracking-[0.2em] text-[16px] sm:text-[18px]">{b}</span>
             ))}
           </div>
         </div>
