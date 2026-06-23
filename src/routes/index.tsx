@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   ArrowRight, Check, Star, ShieldCheck, Sparkles, Image as ImageIcon,
   Video, Megaphone, PenLine, Search, Mail, Instagram, Facebook,
@@ -701,8 +701,8 @@ function Features() {
 
 /* ---------------- Team ---------------- */
 function TeamCard({ n, r, img, dur }: { n: string; r: string; img: string; dur: string }) {
-  const ref = React.useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = React.useState(false);
+  const ref = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
   const toggle = () => {
     const v = ref.current;
     if (!v) return;
