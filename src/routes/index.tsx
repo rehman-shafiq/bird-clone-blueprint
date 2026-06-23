@@ -204,9 +204,9 @@ function Hero() {
 
 function HeroPreview({ tab }: { tab: "social" | "ads" | "seo" }) {
   return (
-    <div className="relative rounded-3xl bg-gradient-to-br from-[#0EA5E9]/10 via-white to-[#10B981]/10 p-5 lg:p-7 shadow-card border border-border min-h-[520px]">
+    <div className="relative rounded-3xl bg-gradient-to-br from-[#0EA5E9]/10 via-white to-[#10B981]/10 p-4 sm:p-5 lg:p-7 shadow-card border border-border min-h-[480px] sm:min-h-[520px]">
       {tab === "social" && (
-        <div className="relative h-[500px] overflow-hidden grid grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]">
+        <div className="relative h-[440px] sm:h-[500px] overflow-hidden grid grid-cols-2 gap-3 sm:gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]">
           {[
             { items: [work1, work2, work3, work4, work5, work6], anim: "animate-scroll-y" },
             { items: [work4, work5, work6, work1, work2, work3], anim: "animate-scroll-y-reverse" },
