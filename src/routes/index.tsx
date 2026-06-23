@@ -357,7 +357,7 @@ function WorkExamples() {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Our Work</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Examples of our work</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Examples of our work</h2>
           <p className="mt-4 text-[17px] text-[#0F172A]/70">Hand-crafted content that looks like it belongs on a brand's feed — not on a stock photo site.</p>
         </div>
 
@@ -415,7 +415,7 @@ function Guarantee() {
             <ShieldCheck className="h-4 w-4 text-[#0EA5E9]" />
             <span className="text-[13px] font-semibold text-[#0F172A]">Risk-free guarantee</span>
           </div>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">
             14 days to fall in love — <span className="text-[#0EA5E9]">or your money back.</span>
           </h2>
           <p className="mt-5 text-[17px] text-[#0F172A]/70">
@@ -484,7 +484,7 @@ function Services() {
     <section id="pricing" className="py-20 lg:py-28 bg-white">
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-[44px] lg:text-[56px] font-extrabold text-[#0F172A] leading-tight">All Services</h2>
+          <h2 className="font-display text-[34px] sm:text-[44px] lg:text-[56px] font-extrabold text-[#0F172A] leading-tight">All Services</h2>
           <p className="mt-4 text-[16px] text-[#0F172A]/70">Get your creative & marketing work done without the hassle of unreliable freelancers, costly agencies. Pay a fixed, monthly, and predictable rate, with no contracts or surprises.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -534,7 +534,7 @@ function Deliverables() {
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
           <div className="lg:col-span-7">
             <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">What you get</p>
-            <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold leading-tight">Every month, delivered like clockwork.</h2>
+            <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold leading-tight">Every month, delivered like clockwork.</h2>
           </div>
           <p className="lg:col-span-5 text-[17px] text-white/70">
             One flat fee. One dedicated team. A full month of done-for-you content, ads, and reporting — every single month.
@@ -572,7 +572,7 @@ function Testimonials() {
             <div className="flex">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-[#0EA5E9] text-[#0EA5E9]" />)}</div>
             <span className="text-[15px] font-semibold text-[#0F172A]">4.9 from 650+ reviews</span>
           </div>
-          <h2 className="font-display text-[32px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Loved by ambitious brands.</h2>
+          <h2 className="font-display text-[32px] sm:text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Loved by ambitious brands.</h2>
         </div>
       </div>
       <div className="relative overflow-hidden">
@@ -605,7 +605,7 @@ function SocialGallery() {
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
           <div className="lg:col-span-7">
             <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Social Gallery</p>
-            <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for the feed. Designed to convert.</h2>
+            <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for the feed. Designed to convert.</h2>
           </div>
           <p className="lg:col-span-5 text-[17px] text-[#0F172A]/70">
             Every post is crafted to stop the scroll, build the brand, and move people toward purchase. No filler. No templates.
@@ -634,7 +634,7 @@ function BeforeAfter() {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">Before & After</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold leading-tight">Real brands. Real glow-ups.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold leading-tight">Real brands. Real glow-ups.</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
           {[
@@ -681,7 +681,7 @@ function Features() {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Why Plumeo</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for brands that ship.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Built for brands that ship.</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {feats.map(({ Icon, t, d }) => (
@@ -760,7 +760,7 @@ function Team() {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[14px] font-semibold text-[#10B981] uppercase tracking-wider mb-3">Team</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">180+ humans. Zero AI shortcuts.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">180+ humans. Zero AI shortcuts.</h2>
           <p className="mt-4 text-[17px] text-[#0F172A]/70">Every post, video, and ad is made by a vetted creator who's spent years in the trenches of social media.</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
@@ -780,7 +780,7 @@ function Collaboration() {
       <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">Collaboration</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Your team and ours, in one shared workspace.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Your team and ours, in one shared workspace.</h2>
           <p className="mt-5 text-[17px] text-[#0F172A]/70">
             Review every post, leave pixel-perfect feedback, and approve content with a click. No more email threads, screenshot annotations, or "did you see my last message?"
           </p>
@@ -858,7 +858,7 @@ function FAQ() {
       <div className="container-x grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <p className="text-[14px] font-semibold text-[#0EA5E9] uppercase tracking-wider mb-3">FAQ</p>
-          <h2 className="font-display text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Questions, answered.</h2>
+          <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold text-[#0F172A] leading-tight">Questions, answered.</h2>
           <p className="mt-5 text-[17px] text-[#0F172A]/70">Can't find what you're looking for? Book a free 20-minute call with our team.</p>
           <a href="#contact" className="mt-6 inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-[#0F172A] text-white font-semibold">
             Book a Demo <ArrowRight className="h-4 w-4" />
@@ -890,7 +890,7 @@ function FinalCTA() {
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0EA5E9] to-[#10B981] p-10 lg:p-16 text-center text-white shadow-pop">
           <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, white 0%, transparent 40%), radial-gradient(circle at 80% 80%, white 0%, transparent 40%)" }} />
           <div className="relative max-w-2xl mx-auto">
-            <h2 className="font-display text-[40px] lg:text-[56px] font-extrabold leading-tight">Ready to make your brand impossible to scroll past?</h2>
+            <h2 className="font-display text-[30px] sm:text-[40px] lg:text-[56px] font-extrabold leading-tight">Ready to make your brand impossible to scroll past?</h2>
             <p className="mt-5 text-[18px] text-white/90">Plans from $99/mo. 14-day money-back guarantee. Cancel anytime.</p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <a href="#pricing" className="inline-flex h-12 items-center px-6 rounded-xl bg-white text-[#0F172A] font-semibold hover:bg-white/90 transition">View Pricing</a>
