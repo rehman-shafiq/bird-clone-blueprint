@@ -202,13 +202,22 @@ function HeroPreview({ tab }: { tab: "social" | "ads" | "seo" }) {
   return (
     <div className="relative rounded-3xl bg-gradient-to-br from-[#0EA5E9]/10 via-white to-[#10B981]/10 p-5 lg:p-7 shadow-card border border-border min-h-[520px]">
       {tab === "social" && (
-        <div className="grid grid-cols-2 gap-4">
-          {[work1, work2, work3, work4].map((src, i) => (
-            <div key={i} className="rounded-xl overflow-hidden bg-white shadow-card animate-float" style={{ animationDelay: `${i * 0.3}s` }}>
-              <img src={src} alt="" loading="lazy" className="w-full aspect-square object-cover" />
-              <div className="px-3 py-2 flex items-center gap-2 text-[12px] text-[#0F172A]/70">
-                <Heart className="h-3.5 w-3.5" /> 2.4k
-                <MessageSquare className="h-3.5 w-3.5 ml-2" /> 184
+        <div className="relative h-[500px] overflow-hidden grid grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]">
+          {[
+            { items: [work1, work2, work3, work4, work5, work6], anim: "animate-scroll-y" },
+            { items: [work4, work5, work6, work1, work2, work3], anim: "animate-scroll-y-reverse" },
+          ].map((col, ci) => (
+            <div key={ci} className="relative">
+              <div className={`flex flex-col gap-4 ${col.anim} hover:[animation-play-state:paused]`}>
+                {[...col.items, ...col.items].map((src, i) => (
+                  <div key={i} className="rounded-xl overflow-hidden bg-white shadow-card shrink-0">
+                    <img src={src} alt="" loading="lazy" className="w-full aspect-square object-cover" />
+                    <div className="px-3 py-2 flex items-center gap-2 text-[12px] text-[#0F172A]/70">
+                      <Heart className="h-3.5 w-3.5" /> 2.4k
+                      <MessageSquare className="h-3.5 w-3.5 ml-2" /> 184
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
